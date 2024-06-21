@@ -1,10 +1,4 @@
-# SNMP
-
-python3 -m venv venv
-pip install flask flask-mysqldb PySNMP
-
-###SQL
-
+## Mysql
 CREATE DATABASE switch_management;
 
 USE switch_management;
@@ -17,13 +11,6 @@ CREATE TABLE users (
 
 CREATE TABLE ports (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    port_number INT NOT NULL,
+    port_number VARCHAR(50) NOT NULL,
     status ENUM('open', 'closed') NOT NULL
 );
-
-### Estrutura de diretorio
-/switch_manager
-    /static
-    /templates
-    app.py
-    config.py

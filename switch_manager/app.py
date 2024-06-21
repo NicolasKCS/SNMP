@@ -19,7 +19,7 @@ def login():
         user = cur.fetchone()
         cur.close()
 
-        if user and bcrypt.checkpw(password, user[2].encode('utf-8')):
+        if user and password == user[2].encode('utf-8'):
             session['username'] = username
             return redirect(url_for('dashboard'))
         else:
